@@ -13,3 +13,5 @@ class BlogModel(models.Model):
         max_length = 50,
         choices = CATEGORY
     )
+    def __str__(self):
+        return self.title

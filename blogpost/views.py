@@ -1,7 +1,5 @@
-from django.db import models
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView,CreateView,DeleteView, UpdateView
-from django.views.generic.edit import DeleteView, UpdateView
+from django.views.generic import ListView, DetailView, CreateView, DeleteView, UpdateView
 from .models import BlogModel
 from django.urls import reverse_lazy
 

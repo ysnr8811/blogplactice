@@ -1,7 +1,7 @@
 from django.db import models
 from django.shortcuts import render
-from django.views.generic import ListView,DetailView,CreateView,DeleteView
-from django.views.generic.edit import DeleteView
+from django.views.generic import ListView,DetailView,CreateView,DeleteView, UpdateView
+from django.views.generic.edit import DeleteView, UpdateView
 from .models import BlogModel
 from django.urls import reverse_lazy
 
@@ -22,4 +22,10 @@ class BlogCreate(CreateView):
 class BlogDelete(DeleteView):
     template_name = 'delete.html'
     model = BlogModel
+    success_url = reverse_lazy('list')
+
+class BlogUpdate(UpdateView):
+    template_name = 'update.html'
+    model = BlogModel
+    fields = ('title', 'content', 'category')
     success_url = reverse_lazy('list')
